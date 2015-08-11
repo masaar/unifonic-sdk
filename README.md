@@ -1,4 +1,10 @@
 # SMS-Voice-PythonSDK
+
+## Installation
+Download the source code and then run:
+```
+python setup.py install
+```
 ## Example
 
 Here is the example to Use Message API
