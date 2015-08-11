@@ -7,3 +7,7 @@ BulkResponse = namedtuple('BulkResponse','Messages,NumberOfUnits,Cost,Balance,Ti
 MessageIDStatus = namedtuple('MessageIDStatus','Status,DLR')
 MessagesReportResponse = namedtuple('MessagesReportResponse','Cost,TotalTextMessages,NumberOfUnits,CurrencyCode')
 MessagesDetailsResponse = namedtuple('MessagesDetailsResponse','messages,CurrencyCode,TotalTextMessages,Page')
+
+Balance = namedtuple('Balance','Balance,CurrencyCode,SharedBalance')
+SenderID = namedtuple('SenderID','SenderID,IsDefault,Status,DateCreated')
+SenderList = namedtuple('SenderList','senderNames')
