@@ -6,3 +6,4 @@ MessageResponse = namedtuple('MessageResponse','MessageID,Status,Recipient,Numbe
 BulkResponse = namedtuple('BulkResponse','Messages,NumberOfUnits,Cost,Balance,TimeCreated,CurrencyCode')
 MessageIDStatus = namedtuple('MessageIDStatus','Status,DLR')
 MessagesReportResponse = namedtuple('MessagesReportResponse','Cost,TotalTextMessages,NumberOfUnits,CurrencyCode')
+MessagesDetailsResponse = namedtuple('MessagesDetailsResponse','messages,CurrencyCode,TotalTextMessages,Page')
