@@ -92,6 +92,7 @@ class AccountResource:
         httpResponse = requests.post(self.__accountUrl.urlDeleteSenderID(),data=payload, headers = headers)
         if httpResponse.status_code < 400 :
             jsonResp = httpResponse.json()
+            del jsonResp['data']            
             respStat = ResponseStatus(**jsonResp)
             return respStat,None
         else :
@@ -124,8 +125,13 @@ class AccountResource:
         httpResponse = requests.post(self.__accountUrl.urlChangeDefaultSenderID(),data=payload, headers = headers)
         if httpResponse.status_code < 400 :
             jsonResp = httpResponse.json()
+            del jsonResp['data']
             respStat = ResponseStatus(**jsonResp)
             return respStat,None
         else :
             print(httpResponse)
             raise Exception(str(httpResponse.status_code) + httpResponse.text)
+    
+    def setPayload(self,payload = {}, key = None, val = None):
+        if val is not None :
+            payload[key] = val
