@@ -10,14 +10,19 @@ python setup.py install
 Here is the example to Use Message API
 ```python
 
-from otsdc.rest.resources.message import MessageResource
+from otsdc.rest.client import OTSRestClient
 from otsdc.url.http_url import HttpOTSUrl
 
-urlHttp = HttpOTSUrl()
-x = MessageResource(appSid='yourAppsID', messageUrl=urlHttp.getMessageURL())
-(stat,resp) = x.send('962xxxxxxxxx', 'body')
+client = OTSRestClient(appSid='yourAppSid')
+
+acct = client.accountResource
+(stat,resp) = acct.getBalance()
 print(stat)
 print(resp)
-print(resp.Balance)
+
+msg = client.messageResource
+(stat,resp) = msg.send('9627xxxxxxx', 'Content Msg')
+print(stat)
+print(resp)
 
 ```
