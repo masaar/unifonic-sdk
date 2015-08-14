@@ -98,3 +98,6 @@ class VoiceResource:
             print(httpResponse)
             raise Exception(str(httpResponse.status_code) + httpResponse.text)
             
+    def setPayload(self,payload = {}, key = None, val = None):
+        if val is not None :
+            payload[key] = val

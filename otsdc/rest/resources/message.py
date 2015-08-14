@@ -24,7 +24,7 @@ class MessageResource:
         self.setPayload(payload, resources_properties.SENDERID,senderId)
         self.setPayload(payload, resources_properties.PRIORITY,priority)
         headers = {'Content-Type':'application/x-www-form-urlencoded'}
-        httpResponse = requests.post(self.__messageUrl.urlGetMessageIDStatus(),data=payload, headers = headers)
+        httpResponse = requests.post(self.__messageUrl.urlSend(),data=payload, headers = headers)
         if httpResponse.status_code < 400 :
             jsonResp = httpResponse.json()
             messageResp = MessageResponse(**(jsonResp['data']))
