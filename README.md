@@ -1,3 +1,6 @@
+# Obsolete
+> This is mirror of Unifonic obsolete Python SDK, kept online for legacy reasons. Nextgen SDK is available at https://github.com/masaar/unifonic_python_sdk/
+
 # SMS-Voice-PythonSDK
 
 ## Installation
